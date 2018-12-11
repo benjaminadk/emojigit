@@ -1,14 +1,14 @@
 {
   "name": "emojis4git",
-  "displayName": "Emoji Commit",
+  "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk",
-  "description": "Emoji git commits made easy",
-  "version": "0.0.4",
+  "description": "Gitmoji commits made easy",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.29.0"
   },
   "categories": [
-    "Other"
+    "Snippets"
   ],
   "keywords": [
     "emoji",
@@ -31,7 +31,7 @@
     "commands": [
       {
         "command": "extension.emojiCommit",
-        "title": "Emoji Commit"
+        "title": "Gitmoji Commit"
       }
     ]
   },

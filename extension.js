@@ -1,5 +1,12 @@
 const vscode = require('vscode')
 
+function doesTerminalExist() {
+  if (vscode.window.terminals.length === 0) {
+    return false
+  }
+  return true
+}
+
 function convert(el) {
   if (el.match('🎨')) return ':art: Improve structure'
   if (el.match('⚡')) return ':zap: Improve performance'
@@ -40,11 +47,32 @@ function convert(el) {
   if (el.match('👽')) return ':alien: Update code'
   if (el.match('🚚')) return ':truck: Move/Rename'
   if (el.match('📄')) return ':page_facing_up: Add license'
+  if (el.match('💥')) return ':boom: Introduce breaking change'
+  if (el.match('🍱')) return ':bento: Add asset'
+  if (el.match('👌')) return ':ok_hand: Update due to code review'
+  if (el.match('♿')) return ':wheelchair: Improve accessibility'
+  if (el.match('💡')) return ':buld: Document source code'
+  if (el.match('🍻')) return ':beers: Drunk tonight'
+  if (el.match('💬')) return ':speech_balloon: Update text'
+  if (el.match('🗃')) return ':card_file_box: Change database'
+  if (el.match('🔊')) return ':loud_sound: Add logs'
+  if (el.match('🔇')) return ':mute: Remove logs'
+  if (el.match('👥')) return ':busts_in_silhouette: Add contributors'
+  if (el.match('🚸')) return ':children_crossing: Improve UX'
+  if (el.match('🏗')) return ':building_construction: Change architecture'
+  if (el.match('📱')) return ':iphone: Add responsive'
+  if (el.match('🤡')) return ':clown_face: Add mocks'
+  if (el.match('🥚')) return ':egg: Add easter egg'
+  if (el.match('🙈')) return ':see_no_evil: Add .gitignore'
+  if (el.match('📸')) return ':camera_flash: Add snapshots'
+  if (el.match('⚗')) return ':alembic: Add experimental'
+  if (el.match('🔍')) return ':mag: Improve SEO'
+  if (el.match('☸')) return ':wheel_of_dharma: Kubernetes'
+  if (el.match('🏷')) return ':label: Add types'
+  return ''
 }
 
 function activate(context) {
-  console.log('Congratulations, your extension "emojis4git" is now active!')
-
   let disposable = vscode.commands.registerCommand('extension.emojiCommit', async function() {
     vscode.window
       .showQuickPick(
@@ -89,13 +117,40 @@ function activate(context) {
           '🚚  Moving or renaming files',
           '📄  Adding or updating license',
           '💥  Introducing breaking changes',
-          '🍱  Adding or updating assets'
+          '🍱  Adding or updating assets',
+          '👌  Updating code due to code review changes',
+          '♿  Improves accessibility',
+          '💡  Documenting source code',
+          '🍻  WCD - Writing code drunkenly',
+          '💬  Updating text and literals',
+          '🗃  Performing database related changes',
+          '🔊  Adding logs',
+          '🔇  Removing logs',
+          '👥  Adding contributors',
+          '🚸  Improving user experience / usability',
+          '🏗  Making architectural changes',
+          '📱  Working on responsive design',
+          '🤡  Mocking things',
+          '🥚  Adding an easter egg',
+          '🙈  Adding or updating a .gitignore file',
+          '📸  Adding or updating snapshots',
+          '⚗  Experimenting with new things',
+          '🔍  Improving SEO',
+          '☸  Work about Kubernetes',
+          '🏷  Adding or updating types (Flow, Typescript)'
         ],
-        { placeHolder: 'What type of commit are you doing?' }
+        { placeHolder: 'Type to search by commit type' }
       )
       .then(el => {
-        vscode.window.activeTerminal.sendText(`git commit -m '${convert(el)}'`, false)
-        vscode.window.activeTerminal.show()
+        if (doesTerminalExist()) {
+          vscode.window.activeTerminal.show()
+          vscode.window.activeTerminal.sendText(`git commit -m '${convert(el)}'`, false)
+        } else {
+          vscode.window.onDidOpenTerminal(e => {
+            e.sendText(`git commit -m '${convert(el)}'`, false)
+          })
+          vscode.window.createTerminal().show()
+        }
       })
   })
 
