@@ -1,0 +1,49 @@
+{
+  "name": "emojis4git",
+  "displayName": "Emoji Commit",
+  "publisher": "benjaminadk",
+  "description": "helps user write git commit message",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.29.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "emoji",
+    "git",
+    "commit",
+    "message",
+    "gitmoji"
+  ],
+  "markdown": "github",
+  "activationEvents": [
+    "onCommand:extension.emojiCommit"
+  ],
+  "icon": "icon.png",
+  "main": "./extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/benjaminadk/emojigit.git"
+  },
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.emojiCommit",
+        "title": "Emoji Commit"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "typescript": "^3.1.4",
+    "vscode": "^1.1.25",
+    "eslint": "^4.11.0",
+    "@types/node": "^8.10.25",
+    "@types/mocha": "^2.2.42"
+  }
+}
