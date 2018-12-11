@@ -15,7 +15,11 @@ When the time comes to type your commit message:
 
 - intended for use with the integrated terminal
 
+![demo](https://s3-us-west-1.amazonaws.com/benjaminadk/gitmoji-commit-demo.gif)
+
 ## Other Info
+
+[**Download Gitmoji Commit**](https://marketplace.visualstudio.com/items?itemName=benjaminadk.emojis4git)
 
 [**Source Code**](https://github.com/benjaminadk/emojigit)
 
