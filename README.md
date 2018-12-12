@@ -6,7 +6,7 @@ Stop wasting time looking up git commit message emojis. This extension helps you
 
 When the time comes to type your commit message:
 
-1. `Ctl + Shift + P` to open command prompt
+1. `Ctl + Shift + P` (or `Cmd + Shift + P` on Mac) to open command prompt
 2. Locate `Gitmoji Commit` command and select
 3. Type to filter selections
 4. Click desired commit type
