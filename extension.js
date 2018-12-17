@@ -51,7 +51,7 @@ function convert(el) {
   if (el.match('🍱')) return ':bento:'
   if (el.match('👌')) return ':ok_hand:'
   if (el.match('♿')) return ':wheelchair:'
-  if (el.match('💡')) return ':buld:'
+  if (el.match('💡')) return ':bulb:'
   if (el.match('🍻')) return ':beers:'
   if (el.match('💬')) return ':speech_balloon:'
   if (el.match('🗃')) return ':card_file_box:'
