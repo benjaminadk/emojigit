@@ -157,7 +157,7 @@ function activate(context) {
       )
     } else {
       vscode.window.onDidOpenTerminal(e => {
-        e.sendText(`git commit -m '${convert(commitType)} ${commitText}'`, false)
+        e.sendText(`git commit -m "${convert(commitType)} ${commitText}"`, false)
       })
       vscode.window.createTerminal().show()
     }
