@@ -55,7 +55,7 @@ I have been debating between generating the text of the commit (_the original ve
 
 ## Demo
 
-![demo](https://s3-us-west-1.amazonaws.com/benjaminadk/gitmoji-commit-demo.gif)
+![demo](https://res.cloudinary.com/benjaminadk/image/upload/v1546353734/portfolio/gitmoji-3.gif)
 
 ## Other Info
 
