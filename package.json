@@ -19,10 +19,11 @@
   ],
   "markdown": "github",
   "activationEvents": [
-    "onCommand:extension.emojiCommit"
+    "onCommand:extension.emojiCommit",
+    "onCommand:extension.emojiCheatSheet"
   ],
   "icon": "icon.png",
-  "main": "./extension",
+  "main": "./src/extension",
   "repository": {
     "type": "git",
     "url": "https://github.com/benjaminadk/emojigit.git"
@@ -31,7 +32,13 @@
     "commands": [
       {
         "command": "extension.emojiCommit",
-        "title": "Gitmoji Commit"
+        "title": "Create Commit Message",
+        "category": "Gitmoji Commit"
+      },
+      {
+        "command": "extension.emojiCheatSheet",
+        "title": "Open Cheat Sheet",
+        "category": "Gitmoji Commit"
       }
     ]
   },

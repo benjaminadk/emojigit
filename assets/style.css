@@ -1,0 +1,44 @@
+html {
+  font-size: 10px;
+}
+
+body {
+  padding: 1rem;
+}
+
+table,
+th,
+td {
+  border: 1px solid;
+}
+
+table {
+  font-size: 1.1rem;
+  border-collapse: collapse;
+  background: white;
+  color: #333;
+}
+
+tr:nth-child(odd) {
+  background: #eee;
+}
+
+td,
+th {
+  text-align: center;
+  padding: 0.25rem 1rem;
+}
+
+th {
+  font-size: 2rem;
+}
+
+.emoji {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.colon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
