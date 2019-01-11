@@ -10,6 +10,7 @@ Stop wasting time looking up git commit message emojis. This extension helps you
     - [Create Commit Message](#create-commit-message)
     - [Cheat Sheet](#cheat-sheet)
     - [Tips](#tips)
+  - [Configuration](#configuration)
   - [Future Plans](#future-plans)
   - [Demo](#demo)
   - [Other Info](#other-info)
@@ -48,6 +49,12 @@ Reference all Gitmojis including their emoji, colon syntax, and description.
 ### Tips
 
 Simplify usage of either command by mapping each one to a custom keyboard shortcut. For more information on keyboard shortcuts refer to the [VS Code Documenation](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-editor).
+
+## Configuration
+
+|   Setting    |                    Options                     | Default |
+| :----------: | :--------------------------------------------: | :-----: |
+| Emoji Syntax | `colon` - e.g. `:tada:` or `unicode` - e.g. 🎉 | `colon` |
 
 ## Future Plans
 
