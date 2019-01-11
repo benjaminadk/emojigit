@@ -40,7 +40,22 @@
         "title": "Open Cheat Sheet",
         "category": "Gitmoji Commit"
       }
-    ]
+    ],
+    "configuration": {
+      "type": "object",
+      "properties": {
+        "emojiSyntax": {
+          "type": "string",
+          "default": "colon",
+          "enum": [
+            "colon",
+            "unicode"
+          ],
+          "description": "Use colon syntax (e.g. :tada:) or Unicode (e.g. 🎉) in commit message.",
+          "scope": "application"
+        }
+      }
+    }
   },
   "scripts": {
     "postinstall": "node ./node_modules/vscode/bin/install",
