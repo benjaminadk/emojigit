@@ -3,7 +3,7 @@
   "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk",
   "description": "Gitmoji commits made easy",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "engines": {
     "vscode": "^1.29.0"
   },
