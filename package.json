@@ -3,7 +3,7 @@
   "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk",
   "description": "Gitmoji commits made easy",
-  "version": "1.0.11",
+  "version": "2.0.0",
   "engines": {
     "vscode": "^1.29.0"
   },
@@ -19,8 +19,8 @@
   ],
   "markdown": "github",
   "activationEvents": [
-    "onCommand:extension.emojiCommit",
-    "onCommand:extension.emojiCheatSheet"
+    "onCommand:extension.gitmojiCommit",
+    "onCommand:extension.gitmojiCheatSheet"
   ],
   "icon": "icon.png",
   "main": "./src/extension",
@@ -31,27 +31,40 @@
   "contributes": {
     "commands": [
       {
-        "command": "extension.emojiCommit",
+        "command": "extension.gitmojiCommit",
         "title": "Create Commit Message",
         "category": "Gitmoji Commit"
       },
       {
-        "command": "extension.emojiCheatSheet",
+        "command": "extension.gitmojiCheatSheet",
         "title": "Open Cheat Sheet",
         "category": "Gitmoji Commit"
       }
     ],
     "configuration": {
       "type": "object",
+      "title": "Gitmoji Commit Configuration",
       "properties": {
-        "emojiSyntax": {
+        "gitmoji.emojiSyntax": {
           "type": "string",
           "default": "colon",
           "enum": [
             "colon",
             "unicode"
           ],
-          "description": "Use colon syntax (e.g. :tada:) or Unicode (e.g. 🎉) in commit message.",
+          "markdownDescription": "Use colon syntax (e.g. `:tada:`) or Unicode (e.g. 🎉) in commit message.",
+          "scope": "application"
+        },
+        "gitmoji.autoCommit": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Automatically execute git commit command. [Read more here.](https://github.com/benjaminadk/emojigit#configuration)",
+          "scope": "application"
+        },
+        "gitmoji.autoClose": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Close terminal after commit.",
           "scope": "application"
         }
       }

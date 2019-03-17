@@ -10,8 +10,10 @@ Stop wasting time looking up git commit message emojis. This extension helps you
     - [Create Commit Message](#create-commit-message)
     - [Cheat Sheet](#cheat-sheet)
     - [Tips](#tips)
+    - [Breaking Changes](#breaking-changes)
   - [Configuration](#configuration)
   - [Future Plans](#future-plans)
+  - [Changelog](#changelog)
   - [Demo](#demo)
   - [Other Info](#other-info)
   - [Contributors](#contributors)
@@ -35,7 +37,7 @@ When the time comes to type your commit message:
 7. Your commit message will appear in the integrated terminal (commit format - `git commit -m ":<your emoji>: <your message>"`)
 8. Proceed with life
 
-- intended for use with the integrated terminal
+- intended for use with integrated terminal
 
 ### Cheat Sheet
 
@@ -50,15 +52,33 @@ Reference all Gitmojis including their emoji, colon syntax, and description.
 
 Simplify usage of either command by mapping each one to a custom keyboard shortcut. For more information on keyboard shortcuts refer to the [VS Code Documenation](https://code.visualstudio.com/docs/getstarted/keybindings#_keyboard-shortcuts-editor).
 
+### Breaking Changes
+
+Version `2.0.0` changed a few items. Depending on your settings this may or may not impact your use of the extension. These changes were made to use better semantic naming for commands and options.
+
+1. Commands are now `extension.gitmojiCommit` and `extension.gitmojiCheatSheet`. If you had keyboard shortcuts to the previous `extension.emojiCommit` or `extension.emojiCheatSheet` you need to update those.
+
+2. The option for emoji syntax is now `gitmoji.emojiSyntax`. If you had this setting set to `unicode` you have to set this option again. If you use `colon` syntax there is no need to change as that is the default.
+
 ## Configuration
 
-|   Setting    |                    Options                     | Default |
-| :----------: | :--------------------------------------------: | :-----: |
-| Emoji Syntax | `colon` - e.g. `:tada:` or `unicode` - e.g. 🎉 | `colon` |
+|   Setting    |                                          Options                                          | Default |
+| :----------: | :---------------------------------------------------------------------------------------: | :-----: |
+| Emoji Syntax |                    `colon` - e.g. `:tada:` **OR** `unicode` - e.g. 🎉                     | `colon` |
+| Auto Commit  |      `true` - automatic commit **OR** `false` - commit sent to terminal for approval      | `false` |
+|  Auto Close  | `true` - closes terminal after commit **OR** `false` - terminal remains open after commit | `false` |
+
+Automatic commits were requested feature to speed up the workflow. The default settings compose a commit message and copy it into the terminal. The user then has to click enter into order to execute the `git` command. With `autoCommit` this is done automatically. `autoClose` speeds up the workflow even more by closing the terminal after the commit command is executed. Hopefully, this provides some flexibity for users to tailor functionality to their preferred work flow.
 
 ## Future Plans
 
-I have been debating between generating the text of the commit (_the original version_) vs providing an input where the user types there own text (_the current version_). One solution is to offer a toggle in settings. I decided to change to the input because I found myself changing the app supplied text on almost every commit. I made the app because I could rememeber the emojis, their codes, and what they were for. I am open to feedback on how to approach this issue.
+- Handle multi-repository workspaces in a better fashion.
+- Integrate with vscode's git extension for smoother auto commits.
+- Develop tests
+
+## Changelog
+
+Follow changes to this extension in the [Changelog](https://github.com/benjaminadk/emojigit/blob/master/CHANGELOG.md)
 
 ## Demo
 
