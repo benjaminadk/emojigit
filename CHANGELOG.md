@@ -4,6 +4,10 @@ All versions and changes will be documented in this file
 
 ## [Unreleased]
 
+## 2.0.1
+
+- fix logic if `autoClose` is true
+
 ## 2.0.0
 
 - **Breaking Change** configuration contributions format to `gitmoji.<setting>`

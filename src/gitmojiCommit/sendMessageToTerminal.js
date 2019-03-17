@@ -16,7 +16,9 @@ module.exports = async commitMessage => {
     const terminal = window.activeTerminal
     terminal.show()
     terminal.sendText(commitMessage, autoCommit)
-    autoClose && setTimeout(() => terminal.dispose(), 2000)
+    if (autoCommit && autoClose) {
+      setTimeout(() => terminal.dispose(), 2000)
+    }
   } else {
     // no terminals active
     // get built in vscode git extension api
@@ -36,7 +38,9 @@ module.exports = async commitMessage => {
       const terminal = window.createTerminal({ cwd })
       terminal.show()
       terminal.sendText(commitMessage, autoCommit)
-      autoClose && setTimeout(() => terminal.dispose(), 2000)
+      if (autoCommit && autoClose) {
+        setTimeout(() => terminal.dispose(), 2000)
+      }
       // handle multi repository workspaces
     } else {
       // gather directory names of all repos
@@ -60,7 +64,9 @@ module.exports = async commitMessage => {
       const terminal = window.createTerminal({ cwd })
       terminal.show()
       terminal.sendText(commitMessage, autoCommit)
-      autoClose && setTimeout(() => terminal.dispose(), 2000)
+      if (autoCommit && autoClose) {
+        setTimeout(() => terminal.dispose(), 2000)
+      }
     }
   }
 }
