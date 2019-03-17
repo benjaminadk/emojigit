@@ -94,6 +94,6 @@ Inspired by [**Gitmoji**](https://gitmoji.carloscuesta.me/)
 
 ## Contributors
 
-|                                [**benjaminadk**](https://github.com/benjaminadk)                                |                                 [**darkhist**](https://github.com/darkhist)                                  |
-| :-------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: |
-| [<img src="https://avatars2.githubusercontent.com/u/28043421?s=80" width="80">](https://github.com/benjaminadk) | [<img src="https://avatars2.githubusercontent.com/u/11217831?s=80" width="80">](https://github.com/darkhist) |
+|                                [**benjaminadk**](https://github.com/benjaminadk)                                |                                 [**darkhist**](https://github.com/darkhist)                                  |                              [**AnandChowdhary**](https://github.com/AnandChowdhary)                              |
+| :-------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------: |
+| [<img src="https://avatars2.githubusercontent.com/u/28043421?s=80" width="80">](https://github.com/benjaminadk) | [<img src="https://avatars2.githubusercontent.com/u/11217831?s=80" width="80">](https://github.com/darkhist) | [<img src="https://avatars2.githubusercontent.com/u/2841780?s=80" width="80">](https://github.com/AnandChowdhary) |
