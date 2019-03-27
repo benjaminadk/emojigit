@@ -1,5 +1,5 @@
-const vscode = require('vscode')
+const { window } = require('vscode')
 
 module.exports = () => {
-  return vscode.window.terminals.length !== 0;
+  return window.terminals.length !== 0
 }

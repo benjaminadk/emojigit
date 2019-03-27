@@ -1,13 +1,13 @@
-const vscode = require('vscode')
+const { window } = require('vscode')
 const gitmojis = require('../gitmojis')
 
-const content = gitmojis.map(g => ({
-  label: `${g.emoji} ${g.text}`,
-  description: g.colon
-}))
-
 module.exports = async () => {
-  return await vscode.window.showQuickPick(content, {
+  const content = gitmojis().map(el => ({
+    label: `${el.emoji} ${el.text.length > 60 ? el.text.slice(0, 60) + '...' : el.text}`,
+    description: el.colon
+  }))
+
+  return await window.showQuickPick(content, {
     placeHolder: 'Type to search gitmoji commit types !',
     ignoreFocusOut: true,
     matchOnDescription: true

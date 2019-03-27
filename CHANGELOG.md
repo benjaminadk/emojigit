@@ -4,6 +4,11 @@ All versions and changes will be documented in this file
 
 ## [Unreleased]
 
+## 2.1.0
+
+- add `gitmoji.customEmoji` option - toggles using custom emoji mapping
+- add `gitmoji.customEmojiMap` option - array of custom emojis
+
 ## 2.0.2
 
 - fix `Merge branches 🔀` colon syntax (missing 's')

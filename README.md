@@ -72,9 +72,10 @@ Automatic commits were requested feature to speed up the workflow. The default s
 
 ## Future Plans
 
-- Handle multi-repository workspaces in a better fashion.
-- Integrate with vscode's git extension for smoother auto commits.
-- Develop tests
+- [ ] Handle multi-repository workspaces in a better fashion.
+- [ ] Integrate with vscode's git extension for smoother auto commits.
+- [ ] Develop tests
+- [ ] Validation for custom emoji mapping - use external JSON instead of settings ?
 
 ## Changelog
 

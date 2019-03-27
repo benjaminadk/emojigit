@@ -1,4 +1,4 @@
-const vscode = require('vscode')
+const { commands, window, ViewColumn, Uri } = require('vscode')
 const gitmojis = require('../gitmojis')
 const getWebviewContent = require('./getWebviewContent')
 const path = require('path')
@@ -11,24 +11,17 @@ const config = {
 let currentPanel = undefined
 
 module.exports = context =>
-  vscode.commands.registerCommand('extension.gitmojiCheatSheet', async function() {
-    const columnToShowIn = vscode.window.activeTextEditor
-      ? vscode.window.activeTextEditor.viewColumn
-      : undefined
+  commands.registerCommand('extension.gitmojiCheatSheet', async function() {
+    const columnToShowIn = window.activeTextEditor ? window.activeTextEditor.viewColumn : undefined
 
     if (currentPanel) {
       currentPanel.reveal(columnToShowIn)
     } else {
-      currentPanel = vscode.window.createWebviewPanel(
-        config.type,
-        config.title,
-        vscode.ViewColumn.One,
-        {
-          enableScripts: true,
-          localResourceRoots: [vscode.Uri.file(path.join(context.extensionPath, 'assets'))]
-        }
-      )
-      currentPanel.webview.html = getWebviewContent(context.extensionPath, gitmojis)
+      currentPanel = window.createWebviewPanel(config.type, config.title, ViewColumn.One, {
+        enableScripts: true,
+        localResourceRoots: [Uri.file(path.join(context.extensionPath, 'assets'))]
+      })
+      currentPanel.webview.html = getWebviewContent(context.extensionPath, gitmojis())
       currentPanel.onDidDispose(
         () => {
           currentPanel = undefined

@@ -1,7 +1,5 @@
-const vscode = require('vscode')
+const { workspace, window, extensions } = require('vscode')
 const doesTerminalExist = require('./doesTerminalExist')
-
-const { workspace, window, extensions } = vscode
 
 module.exports = async commitMessage => {
   // get boolean value of autoCommit setting

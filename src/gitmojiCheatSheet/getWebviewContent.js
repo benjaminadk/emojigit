@@ -1,10 +1,10 @@
-const vscode = require('vscode')
+const { Uri } = require('vscode')
 const path = require('path')
 
 module.exports = (extensionPath, data) => {
-  const stylePathOnDisk = vscode.Uri.file(path.join(extensionPath, 'assets', 'style.css'))
+  const stylePathOnDisk = Uri.file(path.join(extensionPath, 'assets', 'style.css'))
   const styleUri = stylePathOnDisk.with({ scheme: 'vscode-resource' })
-  const scriptPathOnDisk = vscode.Uri.file(path.join(extensionPath, 'assets', 'index.js'))
+  const scriptPathOnDisk = Uri.file(path.join(extensionPath, 'assets', 'index.js'))
   const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' })
 
   const rows = data.map(

@@ -3,7 +3,7 @@
   "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk",
   "description": "Gitmoji commits made easy",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "engines": {
     "vscode": "^1.29.0"
   },
@@ -65,6 +65,18 @@
           "type": "boolean",
           "default": false,
           "markdownDescription": "Close terminal after commit.",
+          "scope": "application"
+        },
+        "gitmoji.customEmoji": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Use your own custom emoji mapping.",
+          "scope": "application"
+        },
+        "gitmoji.customEmojiMap": {
+          "type": "array",
+          "default": [],
+          "markdownDescription": "Define your own custom emoji mapping. Must be an array of objects. Each object must contain the following properties: \n - `emoji` - a string containing the unicode emoji itself.  (e.g. `'✨'`) \n - `colon` - a string representing the github markdown colon syntax for the emoji.  (e.g. `':sparkles:'`) \n - `text` - a string describing the type of commit this emoji represents.  (e.g. `'Initial commit'`) \n - Examples of emojis supported by Github can be found [here](https://gist.github.com/rxaviers/7360908)",
           "scope": "application"
         }
       }
