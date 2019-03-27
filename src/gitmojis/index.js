@@ -33,7 +33,7 @@ module.exports = [
   { emoji: '✏', colon: ':pencil2:', text: 'Fixing typos' },
   { emoji: '💩', colon: ':hankey:', text: 'Writing bad code that needs to be improved' },
   { emoji: '⏪', colon: ':rewind:', text: 'Reverting changes' },
-  { emoji: '🔀', colon: ':twisted_rightwards_arrow:', text: 'Merging branches' },
+  { emoji: '🔀', colon: ':twisted_rightwards_arrows:', text: 'Merging branches' },
   { emoji: '📦', colon: ':package:', text: 'Updating compiled files or packages' },
   { emoji: '👽', colon: ':alien:', text: 'Updating code due to external changes' },
   { emoji: '🚚', colon: ':truck:', text: 'Moving or renaming files' },

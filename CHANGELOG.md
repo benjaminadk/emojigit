@@ -4,6 +4,10 @@ All versions and changes will be documented in this file
 
 ## [Unreleased]
 
+## 2.0.2
+
+- fix `Merge branches 🔀` colon syntax (missing 's')
+
 ## 2.0.1
 
 - fix logic if `autoClose` is true
