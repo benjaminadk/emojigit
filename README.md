@@ -62,13 +62,17 @@ Version `2.0.0` changed a few items. Depending on your settings this may or may 
 
 ## Configuration
 
-|   Setting    |                                          Options                                          | Default |
-| :----------: | :---------------------------------------------------------------------------------------: | :-----: |
-| Emoji Syntax |                    `colon` - e.g. `:tada:` **OR** `unicode` - e.g. 🎉                     | `colon` |
-| Auto Commit  |      `true` - automatic commit **OR** `false` - commit sent to terminal for approval      | `false` |
-|  Auto Close  | `true` - closes terminal after commit **OR** `false` - terminal remains open after commit | `false` |
+|     Setting      |                                              Options                                              | Default |
+| :--------------: | :-----------------------------------------------------------------------------------------------: | :-----: |
+|   Emoji Syntax   |                        `colon` - e.g. `:tada:` **OR** `unicode` - e.g. 🎉                         | `colon` |
+|   Auto Commit    |          `true` - automatic commit **OR** `false` - commit sent to terminal for approval          | `false` |
+|    Auto Close    |     `true` - closes terminal after commit **OR** `false` - terminal remains open after commit     | `false` |
+|   Custom Emoji   |              `true` - use custom emoji map **OR** `false` - use default gitmoji map               | `false` |
+| Custom Emoji Map | define an array of gitmoji objects `{ emoji: '✨', colon: ':sparkles:', text: 'Initial commit' }` |  `[]`   |
 
 Automatic commits were requested feature to speed up the workflow. The default settings compose a commit message and copy it into the terminal. The user then has to click enter into order to execute the `git` command. With `autoCommit` this is done automatically. `autoClose` speeds up the workflow even more by closing the terminal after the commit command is executed. Hopefully, this provides some flexibity for users to tailor functionality to their preferred work flow.
+
+Extensibility was a requested feature as teams may want to use there own system of emojis and commit types. To integrate this feature into the extension the easiest thing to do was let users supply their own mapping as an option. Use `customEmojiMap` to define an array of objects. Objects must conform to to the `gitmoji object` shape, and the emojis should be supported by GitHub. Toggle the use of this custom mapping with `customEmoji`, this way users can keep their custom config and/or switch back to the regular mapping on a project by project basis.
 
 ## Future Plans
 
