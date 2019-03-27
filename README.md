@@ -1,6 +1,6 @@
 # Gitmoji Commit
 
-Stop wasting time looking up git commit message emojis. This extension helps you find the right emoji and helps write your commit message, all without leaving VS Code.
+Stop wasting time looking up git commit message emojis. This extension helps you find the right emoji and helps compose your commit message, all without leaving VS Code. You can even supply your own custom emoji mapping to suit the needs of you and/or your team.
 
 ## Content
 
@@ -12,6 +12,11 @@ Stop wasting time looking up git commit message emojis. This extension helps you
     - [Tips](#tips)
     - [Breaking Changes](#breaking-changes)
   - [Configuration](#configuration)
+    - [Emoji Syntax](#emoji-syntax)
+    - [Auto Commit](#auto-commit)
+    - [Auto Close](#auto-close)
+    - [Custom Emoji](#custom-emoji)
+    - [Custom Emoji Map](#custom-emoji-map)
   - [Future Plans](#future-plans)
   - [Changelog](#changelog)
   - [Demo](#demo)
@@ -24,7 +29,7 @@ Currently, **Gitmoji Commit** adds two commands to VS Code.
 
 ### Create Commit Message
 
-Automates creating a commit message by prompting user for type of commit and message. The type selected determines the emoji. The emoji is chosen visually - ✨, but inserted into the commit message in colon syntax - `:sparkles:`.
+Automates creating a commit message by prompting user for the type of commit and commit message text. The type of commit selected determines the emoji. The emoji is inserted into the commit message as either unicode (e.g. `✨`) or as GitHub emoji markdown colon syntax (e.g. `:sparkles:`).
 
 When the time comes to type your commit message:
 
@@ -70,9 +75,33 @@ Version `2.0.0` changed a few items. Depending on your settings this may or may 
 |   Custom Emoji   |              `true` - use custom emoji map **OR** `false` - use default gitmoji map               | `false` |
 | Custom Emoji Map | define an array of gitmoji objects `{ emoji: '✨', colon: ':sparkles:', text: 'Initial commit' }` |  `[]`   |
 
-Automatic commits were requested feature to speed up the workflow. The default settings compose a commit message and copy it into the terminal. The user then has to click enter into order to execute the `git` command. With `autoCommit` this is done automatically. `autoClose` speeds up the workflow even more by closing the terminal after the commit command is executed. Hopefully, this provides some flexibity for users to tailor functionality to their preferred work flow.
+### Emoji Syntax
 
-Extensibility was a requested feature as teams may want to use there own system of emojis and commit types. To integrate this feature into the extension the easiest thing to do was let users supply their own mapping as an option. Use `customEmojiMap` to define an array of objects. Objects must conform to to the `gitmoji object` shape, and the emojis should be supported by GitHub. Toggle the use of this custom mapping with `customEmoji`, this way users can keep their custom config and/or switch back to the regular mapping on a project by project basis.
+_Emoji Syntax_ determines the format of the emoji inserted into the commit message. The default `colon` syntax uses GitHub's emoji markdown to represent the emoji. A full list of emojis supported by GitHub can be found [here](https://gist.github.com/rxaviers/7360908). Changing this setting to `unicode` will insert the actual emoji into the commit message.
+
+### Auto Commit
+
+_Auto Commit_ determines the behavior of how the composed commit message is delivered to the integrated terminal. By default this setting is `false`. The commit message will be inserted into the terminal but will require the user to press enter to execute the command. If this setting is changed to `true` the command will be executed automatically. This can speed up the user's workflow, but use with caution.
+
+### Auto Close
+
+_Auto Close_ determines if the integrated terminal will close automatically after the commit command is executed. This setting if meant to work with _Auto Commit_ set to `true`.
+
+### Custom Emoji
+
+_Custom Emoji_ determines if a custom emoji mapping should be used instead of the default **Gitmoji Commit** mapping. This custom mapping should be provided to the _Custom Emoji Map_ setting.
+
+### Custom Emoji Map
+
+_Custom Emoji Map_ is an array of **Gitmoji Commit** objects that can be used instead of the defaults. This setting allows the user to define their own emojis and commit types to suit the needs of them and/or their team. The objects provided must be in the appropriate shape. Each object should has three required properies.
+
+| Property |                           Description                            |     Example      |
+| :------: | :--------------------------------------------------------------: | :--------------: |
+| `emoji`  |             The unicode representation of the emoji              |       `✨`       |
+| `colon`  |      The GitHub markdown colon representation of the emoji       |   `:sparkles:`   |
+|  `text`  | The description of the type of commit associated with this emoji | `Initial commit` |
+
+To use this custom mapping make sure to set _Custom Emoji_ to `true`. Having this additional setting allows users to save a custom mapping in their options but also use the default mapping depending on the needs of their current project.
 
 ## Future Plans
 

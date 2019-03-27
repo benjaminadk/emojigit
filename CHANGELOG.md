@@ -4,6 +4,10 @@ All versions and changes will be documented in this file
 
 ## [Unreleased]
 
+## 2.1.1
+
+- update readme
+
 ## 2.1.0
 
 - add `gitmoji.customEmoji` option - toggles using custom emoji mapping
