@@ -4,6 +4,11 @@ All versions and changes will be documented in this file
 
 ## [Unreleased]
 
+## 2.1.2
+
+- update readme gifs
+- update icon
+
 ## 2.1.1
 
 - update readme

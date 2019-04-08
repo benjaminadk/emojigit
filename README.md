@@ -106,7 +106,7 @@ To use this custom mapping make sure to set _Custom Emoji_ to `true`. Having thi
 ## Future Plans
 
 - [ ] Handle multi-repository workspaces in a better fashion.
-- [ ] Integrate with vscode's git extension for smoother auto commits.
+- [ ] Look into VSCode Git API
 - [ ] Develop tests
 - [ ] Validation for custom emoji mapping - use external JSON instead of settings ?
 
@@ -116,7 +116,13 @@ Follow changes to this extension in the [Changelog](https://github.com/benjamina
 
 ## Demo
 
-![demo](https://res.cloudinary.com/benjaminadk/image/upload/v1546353734/portfolio/gitmoji-3.gif)
+- Gitmoji Commit Message
+
+![](https://s3-us-west-1.amazonaws.com/benjaminadk/gitmoji-01.gif)
+
+- Gitmoji Cheat Sheet
+
+![](https://s3-us-west-1.amazonaws.com/benjaminadk/gitmoji-02.gif)
 
 ## Other Info
 

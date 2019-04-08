@@ -2,20 +2,23 @@
   "name": "emojis4git",
   "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk",
-  "description": "Gitmoji commits made easy",
-  "version": "2.1.1",
+  "description": "A utility to compose GitHub commit messages with emojis. Based on Gitmoji.",
+  "version": "2.1.2",
   "engines": {
     "vscode": "^1.29.0"
   },
   "categories": [
-    "Snippets"
+    "Snippets",
+    "Other"
   ],
   "keywords": [
     "emoji",
     "git",
     "commit",
-    "message",
-    "gitmoji"
+    "github",
+    "gitmoji",
+    "source",
+    "control"
   ],
   "markdown": "github",
   "activationEvents": [
