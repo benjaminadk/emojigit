@@ -2,9 +2,11 @@ const { window } = require('vscode')
 const gitmojis = require('../gitmojis')
 
 module.exports = async () => {
-  const content = gitmojis().map(el => ({
-    label: `${el.emoji} ${el.text.length > 60 ? el.text.slice(0, 60) + '...' : el.text}`,
-    description: el.colon
+  const content = gitmojis().map(gitmoji => ({
+    label: `${gitmoji.emoji} ${
+      gitmoji.text.length > 60 ? gitmoji.text.slice(0, 60) + '...' : gitmoji.text
+    }`,
+    description: gitmoji.colon
   }))
 
   return await window.showQuickPick(content, {

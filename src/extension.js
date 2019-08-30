@@ -6,7 +6,7 @@ function activate(context) {
   context.subscriptions.push(gitmojiCommit())
 }
 
-exports.activate = activate
-
 function deactivate() {}
+
+exports.activate = activate
 exports.deactivate = deactivate

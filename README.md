@@ -15,6 +15,7 @@ Stop wasting time looking up git commit message emojis. This extension helps you
     - [Emoji Syntax](#emoji-syntax)
     - [Auto Commit](#auto-commit)
     - [Auto Close](#auto-close)
+    - [Multiline Commit](#multiline-commit)
     - [Custom Emoji](#custom-emoji)
     - [Custom Emoji Map](#custom-emoji-map)
   - [Future Plans](#future-plans)
@@ -72,6 +73,7 @@ Version `2.0.0` changed a few items. Depending on your settings this may or may 
 |   Emoji Syntax   |                        `colon` - e.g. `:tada:` **OR** `unicode` - e.g. 🎉                         | `colon` |
 |   Auto Commit    |          `true` - automatic commit **OR** `false` - commit sent to terminal for approval          | `false` |
 |    Auto Close    |     `true` - closes terminal after commit **OR** `false` - terminal remains open after commit     | `false` |
+| Multiline Commit |                     `true` - forces shell to parse `\n` and create a newline                      | `false` |
 |   Custom Emoji   |              `true` - use custom emoji map **OR** `false` - use default gitmoji map               | `false` |
 | Custom Emoji Map | define an array of gitmoji objects `{ emoji: '✨', colon: ':sparkles:', text: 'Initial commit' }` |  `[]`   |
 
@@ -86,6 +88,30 @@ _Auto Commit_ determines the behavior of how the composed commit message is deli
 ### Auto Close
 
 _Auto Close_ determines if the integrated terminal will close automatically after the commit command is executed. This setting if meant to work with _Auto Commit_ set to `true`.
+
+### Multiline Commit
+
+_Multiline Commit_ forces a _Bash_ shell to parse the `\n` character in the commit message. When **Gitmoji Commit** opens the prompt for commit message text a multiline commit message can be created. Requires _Bash_ shell.
+
+- Example multiline commit message
+
+```text
+🐛 Fix error when protocol is missing
+
+First, it checks if the protocol is set. If not, it changes the url and
+add the basic http protocol on the beginning.
+Second, it does a "preflight" request and follows all redirects and
+returns the last URL. The process then continues with this URL.
+
+Resolves #17
+```
+
+- Select `🐛 Fix a bug :bug:` from the commit type prompt
+- Enter the following into the commit message prompt
+
+```text
+Fix error when protocol is missing\n\nFirst, it checks if the protocol is set. If not, it changes the url and\nadd the basic http protocol on the beginning.\nSecond, it does a "preflight" request and follows all redirects and\nreturns the last URL. The process then continues with this URL.\n\nResolves #17
+```
 
 ### Custom Emoji
 
@@ -102,13 +128,6 @@ _Custom Emoji Map_ is an array of **Gitmoji Commit** objects that can be used in
 |  `text`  | The description of the type of commit associated with this emoji | `Initial commit` |
 
 To use this custom mapping make sure to set _Custom Emoji_ to `true`. Having this additional setting allows users to save a custom mapping in their options but also use the default mapping depending on the needs of their current project.
-
-## Future Plans
-
-- [ ] Handle multi-repository workspaces in a better fashion.
-- [ ] Look into VSCode Git API
-- [ ] Develop tests
-- [ ] Validation for custom emoji mapping - use external JSON instead of settings ?
 
 ## Changelog
 

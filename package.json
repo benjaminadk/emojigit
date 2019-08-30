@@ -61,13 +61,19 @@
         "gitmoji.autoCommit": {
           "type": "boolean",
           "default": false,
-          "markdownDescription": "Automatically execute git commit command. [Read more here.](https://github.com/benjaminadk/emojigit#configuration)",
+          "markdownDescription": "Automatically execute git commit command. [Read more here.](https://github.com/benjaminadk/emojigit#auto-commit)",
           "scope": "application"
         },
         "gitmoji.autoClose": {
           "type": "boolean",
           "default": false,
           "markdownDescription": "Close terminal after commit.",
+          "scope": "application"
+        },
+        "gitmoji.multilineCommit": {
+          "type": "boolean",
+          "default": false,
+          "markdownDescription": "Enables multiline commit messages. Requires *Bash* shell. [Read more here.](https://github.com/benjaminadk/emojigit#multiline-commit)",
           "scope": "application"
         },
         "gitmoji.customEmoji": {

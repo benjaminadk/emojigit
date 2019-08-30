@@ -4,6 +4,10 @@ All versions and changes will be documented in this file
 
 ## [Unreleased]
 
+## 2.2.0
+
+- add `gitmoji.multilineCommit` option - forces _Bash_ shell to parse `\n` character
+
 ## 2.1.2
 
 - update readme gifs

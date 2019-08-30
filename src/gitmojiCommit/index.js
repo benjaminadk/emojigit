@@ -1,6 +1,6 @@
 const { commands, window } = require('vscode')
-const convert = require('./convert')
 const getCommitType = require('./getCommitType')
+const composeCommit = require('./composeCommit')
 const sendMessageToTerminal = require('./sendMessageToTerminal')
 
 // register this function as gitmojiCommit
@@ -15,7 +15,7 @@ module.exports = () =>
 
     // prompt user for commit message text
     const commitText = await window.showInputBox({
-      placeHolder: 'Commit message text ex: git commit -m :emoji: {{ your text here }}',
+      placeHolder: `Commit message text ex: git commit -m ':emoji: {{ your text here }}'`,
       ignoreFocusOut: true
     })
 
@@ -24,10 +24,8 @@ module.exports = () =>
       return window.showWarningMessage('Gitmoji Commit: Commit message has no text.')
     }
 
-    // compose message from commit type and commit text
-    const commitMessage = `git commit -m "${convert(commitType)} ${commitText}"`
+    const commitMessage = composeCommit(commitType, commitText)
 
-    console.log(commitMessage)
     // send the composed message to integrated terminal
     sendMessageToTerminal(commitMessage)
   })
