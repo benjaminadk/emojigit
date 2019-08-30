@@ -1,7 +1,7 @@
 {
   "name": "emojis4git",
   "displayName": "Gitmoji Commit",
-  "publisher": "benjaminadk",
+  "publisher": "benjaminadk0454",
   "description": "A utility to compose GitHub commit messages with emojis. Based on Gitmoji.",
   "version": "2.4.0",
   "engines": {
