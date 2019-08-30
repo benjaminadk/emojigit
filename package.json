@@ -3,7 +3,7 @@
   "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk",
   "description": "A utility to compose GitHub commit messages with emojis. Based on Gitmoji.",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "engines": {
     "vscode": "^1.29.0"
   },
