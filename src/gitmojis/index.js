@@ -82,6 +82,10 @@ module.exports = () => {
         { emoji: '⚗', colon: ':alembic:', text: 'Experiementing with new things' },
         { emoji: '🔍', colon: ':mag:', text: 'Improving SEO' },
         { emoji: '☸', colon: ':wheel_of_dharma:', text: 'Work about Kubernetes' },
-        { emoji: '🏷', colon: ':label:', text: 'Adding or updating types (Flow, Typescript)' }
+        { emoji: '🏷', colon: ':label:', text: 'Adding or updating types (Flow, Typescript)' },
+        { emoji: '🌱', colon: ':seedling:', text: 'Adding or updating seed files' },
+        { emoji: '🚩', colon: ':triangular_flag_on_post:', text: 'Adding, updating, or removing feature flags' },
+        { emoji: '🥅', colon: ':goal_net:', text: 'Catching errors' },
+        { emoji: '💫', colon: ':dizzy:', text: 'Adding or updating animations and transitions' }
       ]
 }
