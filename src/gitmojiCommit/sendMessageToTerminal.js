@@ -11,10 +11,11 @@ module.exports = async commitMessage => {
 
   const multiline = workspace.getConfiguration().get('gitmoji.multilineCommit')
 
+  const commitMessageEscaped = commitMessage.replaceAll(/\'/g, String.raw`\'`).replaceAll(/\"/g, String.raw`\"`)
   const commandLine = (
     multiline 
-    ? `git commit -m $'${commitMessage}'` 
-    : `git commit -m "${commitMessage}"`
+    ? `git commit -m $'${commitMessageEscaped}'` 
+    : `git commit -m "${commitMessageEscaped}"`
   )
 
   // if terminal is open assume commit goes to cwd
