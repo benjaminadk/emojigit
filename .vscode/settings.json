@@ -1,5 +1,4 @@
 // Place your settings in this file to overwrite default and user settings.
 {
-  "typescript.surveys.enabled": false,
-  "terminal.integrated.cwd": "C:\\Users\\Benjamin\\Desktop\\project\\emojis4git"
+  "typescript.surveys.enabled": false
 }

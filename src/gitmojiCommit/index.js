@@ -1,11 +1,11 @@
 const { commands, window } = require('vscode')
 const getCommitType = require('./getCommitType')
+const sendMessageToReceiver = require('./sendMessageToCommitmentDelegator')
 const composeCommit = require('./composeCommit')
-const sendMessageToTerminal = require('./sendMessageToTerminal')
 
 // register this function as gitmojiCommit
 module.exports = () =>
-  commands.registerCommand('extension.gitmojiCommit', async function() {
+  commands.registerCommand('extension.gitmojiCommit', async function () {
     // get the gitmoji commit type
     const commitType = await getCommitType()
     // if no type is selected exit and display warning message
@@ -26,6 +26,6 @@ module.exports = () =>
 
     const commitMessage = composeCommit(commitType, commitText)
 
-    // send the composed message to integrated terminal
-    sendMessageToTerminal(commitMessage)
+    // send the composed message to Receiver
+    sendMessageToReceiver(commitMessage);
   })
