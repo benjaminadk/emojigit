@@ -3,9 +3,9 @@
   "displayName": "Gitmoji Commit",
   "publisher": "benjaminadk0454",
   "description": "A utility to compose GitHub commit messages with emojis. Based on Gitmoji.",
-  "version": "2.5.0",
+  "version": "2.6.0-alpha",
   "engines": {
-    "vscode": "^1.29.0"
+    "vscode": "^1.65.0"
   },
   "categories": [
     "Snippets",
@@ -56,6 +56,16 @@
             "unicode"
           ],
           "markdownDescription": "Use colon syntax (e.g. `:tada:`) or Unicode (e.g. 🎉) in commit message.",
+          "scope": "application"
+        },
+        "gitmoji.commitmentDelegator": {
+          "type": "string",
+          "default": "source control",
+          "enum": [
+            "terminal",
+            "source control"
+          ],
+          "markdownDescription": "Use terminal or Source Control to commit.",
           "scope": "application"
         },
         "gitmoji.autoCommit": {

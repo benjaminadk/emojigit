@@ -13,12 +13,12 @@ Stop wasting time looking up git commit message emojis. This extension helps you
     - [Breaking Changes](#breaking-changes)
   - [Configuration](#configuration)
     - [Emoji Syntax](#emoji-syntax)
+    - [Commitment Delegator](#commitment-delegator)
     - [Auto Commit](#auto-commit)
     - [Auto Close](#auto-close)
     - [Multiline Commit](#multiline-commit)
     - [Custom Emoji](#custom-emoji)
     - [Custom Emoji Map](#custom-emoji-map)
-  - [Future Plans](#future-plans)
   - [Changelog](#changelog)
   - [Demo](#demo)
   - [Other Info](#other-info)
@@ -68,18 +68,23 @@ Version `2.0.0` changed a few items. Depending on your settings this may or may 
 
 ## Configuration
 
-|     Setting      |                                              Options                                              | Default |
-| :--------------: | :-----------------------------------------------------------------------------------------------: | :-----: |
-|   Emoji Syntax   |                        `colon` - e.g. `:tada:` **OR** `unicode` - e.g. 🎉                         | `colon` |
-|   Auto Commit    |          `true` - automatic commit **OR** `false` - commit sent to terminal for approval          | `false` |
-|    Auto Close    |     `true` - closes terminal after commit **OR** `false` - terminal remains open after commit     | `false` |
-| Multiline Commit |                     `true` - forces shell to parse `\n` and create a newline                      | `false` |
-|   Custom Emoji   |              `true` - use custom emoji map **OR** `false` - use default gitmoji map               | `false` |
-| Custom Emoji Map | define an array of gitmoji objects `{ emoji: '✨', colon: ':sparkles:', text: 'Initial commit' }` |  `[]`   |
+|       Setting        |                                             Options                                              |     Default      |
+| :------------------: | :----------------------------------------------------------------------------------------------: | :--------------: |
+|     Emoji Syntax     |                        `colon` - e.g. `:tada:` **OR** `unicode` - e.g. 🎉                         |     `colon`      |
+| Commitment Delegator |      `source control` - commit with Source Control **OR** `terminal` - commit with terminal      | `source control` |
+|     Auto Commit      |         `true` - automatic commit **OR** `false` - commit sent to terminal for approval          |     `false`      |
+|      Auto Close      |    `true` - closes terminal after commit **OR** `false` - terminal remains open after commit     |     `false`      |
+|   Multiline Commit   |                     `true` - forces shell to parse `\n` and create a newline                     |     `false`      |
+|     Custom Emoji     |              `true` - use custom emoji map **OR** `false` - use default gitmoji map              |     `false`      |
+|   Custom Emoji Map   | define an array of gitmoji objects `{ emoji: '✨', colon: ':sparkles:', text: 'Initial commit' }` |       `[]`       |
 
 ### Emoji Syntax
 
 _Emoji Syntax_ determines the format of the emoji inserted into the commit message. The default `colon` syntax uses GitHub's emoji markdown to represent the emoji. A full list of emojis supported by GitHub can be found [here](https://gist.github.com/rxaviers/7360908). Changing this setting to `unicode` will insert the actual emoji into the commit message.
+
+### Commitment Delegator
+
+_Commitment Delegator_ determines the delegator for a commit. By default, a commit would be executed with `Source Control`.
 
 ### Auto Commit
 

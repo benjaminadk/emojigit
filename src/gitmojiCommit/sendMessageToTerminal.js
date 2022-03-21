@@ -9,11 +9,19 @@ module.exports = async commitMessage => {
   // get boolean value of autoClose setting
   const autoClose = workspace.getConfiguration().get('gitmoji.autoClose')
 
+  const multiline = workspace.getConfiguration().get('gitmoji.multilineCommit')
+
+  const commandLine = (
+    multiline 
+    ? `git commit -m $'${commitMessage}'` 
+    : `git commit -m "${commitMessage}"`
+  )
+
   // if terminal is open assume commit goes to cwd
   if (doesTerminalExist()) {
     const terminal = window.activeTerminal
     terminal.show()
-    terminal.sendText(commitMessage, autoCommit)
+    terminal.sendText(commandLine, autoCommit)
     if (autoCommit && autoClose) {
       setTimeout(() => terminal.dispose(), 2000)
     }
@@ -35,7 +43,7 @@ module.exports = async commitMessage => {
       // create new terminal
       const terminal = window.createTerminal({ cwd })
       terminal.show()
-      terminal.sendText(commitMessage, autoCommit)
+      terminal.sendText(commandLine, autoCommit)
       if (autoCommit && autoClose) {
         setTimeout(() => terminal.dispose(), 2000)
       }
@@ -61,7 +69,7 @@ module.exports = async commitMessage => {
       // create terminal at cwd
       const terminal = window.createTerminal({ cwd })
       terminal.show()
-      terminal.sendText(commitMessage, autoCommit)
+      terminal.sendText(commandLine, autoCommit)
       if (autoCommit && autoClose) {
         setTimeout(() => terminal.dispose(), 2000)
       }

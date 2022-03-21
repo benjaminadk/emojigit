@@ -1,7 +1,7 @@
 const { commands, window } = require('vscode')
 const getCommitType = require('./getCommitType')
+const sendMessageToReceiver = require('./sendMessageToCommitmentDelegator')
 const composeCommit = require('./composeCommit')
-const sendMessageToSourceControl = require("./sendMessageToSourceControl");
 
 // register this function as gitmojiCommit
 module.exports = () =>
@@ -25,6 +25,7 @@ module.exports = () =>
     }
 
     const commitMessage = composeCommit(commitType, commitText)
-    // send the composed message to Source Control
-    sendMessageToSourceControl(commitMessage);
+
+    // send the composed message to Receiver
+    sendMessageToReceiver(commitMessage);
   })
