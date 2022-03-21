@@ -15,10 +15,7 @@
     "emoji",
     "git",
     "commit",
-    "github",
-    "gitmoji",
-    "source",
-    "control"
+    "gitmoji"
   ],
   "markdown": "github",
   "activationEvents": [
